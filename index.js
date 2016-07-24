@@ -5,7 +5,7 @@ function complete(token, callback) {
   var info = chop(token);
 
   var wild = info.file + "*";
-  glob(wild, {cwd: info.dir}, function (err, arr) {
+  glob(wild, {cwd: info.dir, dot: true}, function (err, arr) {
     callback(err, arr, info);
   });
 }
